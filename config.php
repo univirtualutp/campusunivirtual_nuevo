@@ -161,7 +161,7 @@ $CFG->wwwroot   = 'https://aulaunivirtual.utp.edu.co';
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = '/data/moodledta';
+$CFG->dataroot  = '/data/moodledata';
 
 
 //=========================================================================
