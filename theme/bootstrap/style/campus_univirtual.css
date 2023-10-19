@@ -1,0 +1,1077 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Light.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Light.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-LightIt.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-LightIt.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-LightIt.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Regular.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Regular.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-It.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-It.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-It.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-It.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Semibold.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Semibold.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-SemiboldIt.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-SemiboldIt.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-SemiboldIt.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-SemiboldIt.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Bold.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Bold.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-BoldIt.eot');
+    src: url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-BoldIt.woff') format('woff'),
+        url('https://pruebas-univirtual.utp.edu.co/campus_univirtual/plantillas/fonts/SourceSansPro-BoldIt.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+a {
+    color:#00407B;
+}
+
+a:hover, a:focus {
+    color:#00407B;
+}
+
+body {
+    background: #D2D73C url(https://pruebas-univirtual.utp.edu.co/campus_univirtual/theme/aulaunivirtual/pix/fondo_campus_univirtual.jpg) no-repeat;
+    background-position: 0 50px;
+    color: #666666;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2em;
+    margin-top: 50px;
+}
+@media (max-width: 767px) {
+    body {
+        background-size: 230%;
+    }
+}
+
+button, input.form-submit, input[type="button"], input[type="submit"], input[type="reset"] {
+    background-color: #D2D73C;
+    border: 1px #D2D73C outset;
+    border-radius: 6px;
+    color: #00407B;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 3px 5px;
+    padding: 4px 10px;
+}
+
+button:hover, input.form-submit:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:focus, input.form-submit:focus, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, button:active, input.form-submit:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, button.active, input.form-submit.active, input[type="button"].active, input[type="submit"].active, input[type="reset"].active, .open .dropdown-togglebutton, .open .dropdown-toggleinput.form-submit, .open .dropdown-toggleinput[type="button"], .open .dropdown-toggleinput[type="submit"], .open .dropdown-toggleinput[type="reset"] {
+    background-color: #F5F7D2;
+    border: 1px #D2D73C outset;
+    color: #00407B;
+}
+
+form input[type="text"] {
+    padding: 5px 10px;
+    font-size: 16px;
+    color:#666666;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+form input[type="text"]:focus {
+    border-color: #D2D73C;
+    box-shadow: 0 0 5px rgba(210, 215, 32, 0.3);
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 600;
+    color: #00407B;
+    text-shadow: -1px 1px rgba(255,255,255,0.5);
+}
+
+h1.titulo_curso {
+    border-bottom: 2px dotted #d2d73c;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+h3.sectionname {
+
+}
+
+input.form-submit, input#id_submitbutton, input#id_submitbutton2, .path-admin .buttons input[type="submit"], td.submit input {
+    background-color: #D2D73C;
+    border: 1px #D2D73C outset;
+    color: #00407B;
+}
+
+input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hover, .path-admin .buttons input[type="submit"]:hover, td.submit input:hover, input.form-submit:focus, input#id_submitbutton:focus, input#id_submitbutton2:focus, .path-admin .buttons input[type="submit"]:focus, td.submit input:focus, input.form-submit:active, input#id_submitbutton:active, input#id_submitbutton2:active, .path-admin .buttons input[type="submit"]:active, td.submit input:active, input.form-submit.active, input#id_submitbutton.active, input#id_submitbutton2.active, .path-admin .buttons input[type="submit"].active, td.submit input.active, .open .dropdown-toggleinput.form-submit, .open .dropdown-toggleinput#id_submitbutton, .open .dropdown-toggleinput#id_submitbutton2, .open .dropdown-toggle.path-admin .buttons input[type="submit"], .open .dropdown-toggletd.submit input {
+    background-color: #00407B;
+    border: 1px #00407B outset;
+    color: #FFFFFF;
+}
+
+textarea {
+    display:block;
+    width:100%;
+    height:38px;
+    padding: 5px 10px;
+    font-size: 16px !important;
+    line-height:1.428571429;
+    color:#555;
+    background-color:#fff;
+    background-image:none;
+    border:1px solid #ccc;
+    border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    height:200px
+}
+
+textarea:focus {
+    border-color: #D2D73C;
+    box-shadow: 0 0 5px rgba(210, 215, 32, 0.3);
+}
+
+#adminsearchquery, #blogsearchquery, #searchform_search, .block_adminblock select {
+    margin: 5px 0;
+    max-width: 65%
+}
+
+#bloque-sasde {
+    background: #00407B;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+    color: #FFFFFF;
+    font-size: 0.8em;
+    line-height: 1.3;
+    margin: 1.5em 0;
+    padding-bottom: 15px;
+}
+
+#bloque-sasde .botiquin {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#bloque-sasde .horarios {
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+}
+
+#bloque-sasde h2 {
+    border-bottom: 2px dotted #d2d73c;
+    color: #fff;
+    margin: 2px 0 15px 0;
+    padding: 5px;
+    text-shadow: -1px 1px rgba(0,0,0,1);
+}
+
+#bloque-sasde h3 {
+    color: #FFFFFF;
+    margin: 10px 0;
+    text-shadow: -1px 1px rgba(0,0,0,1);
+}
+
+#bloque-sasde h4 {
+    color: #D2D73C;
+    text-shadow: -1px 1px rgba(0,0,0,1);
+}
+
+#bloque-sasde img {
+    display: initial;
+}
+
+#bloque-sasde a {
+    color: #F5F7D2;
+}
+
+#foto_nav {
+    border-radius: 4px;
+    margin: -10px 10px;
+    width: 35px;
+}
+
+#menu-perfil {
+    border: 0;
+    font-size: 18px;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+
+#notice .singlebutton+.singlebutton input, .submit.buttons input[name="cancel"] {
+    border: 1px #D2D73C outset;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 3px 5px;
+    padding: 4px 10px;
+}
+
+#notice .singlebutton+.singlebutton input:hover, .submit.buttons input[name="cancel"]:hover, #notice .singlebutton+.singlebutton input:focus, .submit.buttons input[name="cancel"]:focus {
+    color: #00407B;
+}
+
+#page {
+    margin: 0 2.5%;
+}
+
+#page-content {
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+    padding: 15px 0;
+}
+
+#page-footer {
+    border-top: 0px solid transparent;
+    font-size: 0.9em;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    text-align: inherit;
+}
+
+#page-footer div.col-sm-6 {
+    border-left: 1px dotted #00407b;
+}
+
+#page-footer strong {
+    color: #00407B;
+    font-weight: 600;
+}
+
+#page-footer strong span {
+    font-size: 1.3em;
+}
+
+#page-footer .redes {
+    text-align: right;
+}
+
+#page-footer .redes img {
+    margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+    #page-footer {
+        text-align: center;
+    }
+    #page-footer div.col-sm-6 {
+        border: none;
+    }
+    #page-footer .logos {
+        display: inline;
+        max-width: 75%;
+    } 
+    #page-footer .redes {
+        text-align: center;
+    } 
+}
+
+#perfil-inicio {
+    background: #F5F7D2;
+    border: 10px solid #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+    margin: 1.5em 0;
+    padding-bottom: 15px;
+}
+
+#perfil-inicio button.salir {
+    margin-left: 0;
+}
+
+#perfil-inicio button.salir:hover {
+    background-color: #00407B;
+    border: 1px #00407B outset;
+    color: #FFFFFF;
+}
+
+#perfil-inicio h2 {
+    border-bottom: 2px dotted #D2D73C;
+    margin: 2px 0 15px 0;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+#perfil-inicio h4 {
+    background: #D2D73C;
+    border-radius: 4px;
+    margin-left: -5px;
+    margin-right: -5px;
+    padding: 3px 12px;
+}
+
+#perfil-inicio .mensajes-nuevos {
+    background-color: #FFFFFF;
+    box-shadow: inset 0 1px 8px rgba(0,0,0,0.25);
+    padding: 5px 2px 5px 8px;
+    border-radius: 4px;
+}
+
+#perfil-inicio ul li {
+    border-bottom: 1px dotted #d2d73c;
+    list-style: none;
+    padding: 5px;
+}
+
+#perfil-inicio .ultimo-mensaje {
+    background: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 8px rgba(0,0,0,0.25);
+    padding-bottom: 10px;
+}
+
+#perfil-inicio .ultimo-mensaje .mensaje {
+    font-size: 0.8em;
+    line-height: 1.3;
+    margin-right: -5px;
+    max-height: 150px;
+    overflow: auto;
+}
+
+#perfil-inicio .ultimo-mensaje .mensaje .nombre {
+    font-weight: bold;
+}
+
+#perfil-inicio .ultimo-mensaje .mensaje .fecha {
+    border-bottom: 1px dotted;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+#perfil-inicio .fotousuario {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: top;
+}
+
+#perfil-inicio .usuario {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#settingsnav {
+    margin: 10px 0;
+}
+
+/*#confirmdialog_c{
+border-radius: 10px;
+background: #F5F7D2;
+margin: 1em;
+padding: 1.5em;
+}*/
+
+.activity img.activityicon {
+    margin: 1px 10px;
+}
+
+.alerta_mensaje {
+    background: #D2D73C;
+    border: 1px inset #f7f5d2;
+    border-radius: 4px;
+    color: #00407B;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px;
+    padding: 1px 5px;
+    text-shadow: -1px 1px rgba(255,255,255,0.5);
+}
+
+.alert-success {
+    background-color:#F5F7D2;
+    border-color:#D2D73C;
+    color:inherit;
+}
+
+.block .content {
+    padding: 5px;
+}
+
+.block .footer {
+    background-color: #F5F7D2;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.block .header .block_action {
+    padding: 0px;
+    line-height: 1;
+}
+
+.block .header .title .commands {
+    background: #F5F7D2;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.25);
+    border: 2px solid #d2d73c;
+    border-radius: 0 0 4px 4px;
+    display: block;
+    line-height: 1;
+    padding: 0;
+}
+
+.block .header .title .commands, .block_adminblock .content, .block .footer {
+    padding: 5px 10px;
+}
+
+.block .header .title h2, .block h3 {
+    padding: 3px 12px;
+    font-size: 0.9em;
+}
+
+.block_adminblock .content {
+
+}
+
+.block_adminblock .singleselect {
+    display:block
+}
+
+.boton-salir, .boton-salir-xs {
+    margin: 10px 15px;
+    margin-left: 0;
+}
+@media (min-width: 768px) {
+    .boton-salir-xs {
+        display: none;
+    }
+}
+
+.box_lecciones {
+    background: #F5F7D2;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+    float: right;
+    margin: 0 0.5em 0.5em 1em;
+    width: 40%;
+}
+
+.box_metacurso {
+    background: #F5F7D2;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+}
+
+.breadcrumb {
+    background-color: #F5F7D2;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.25);
+    font-size: 0.9em;
+    padding: 6px 12px;
+}
+
+.breadcrumb > li:first-child, .breadcrumb > li a:hover{
+    background: #D2D73C;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.25);
+    margin: 2px 0;
+    text-decoration: none;
+}
+
+.breadcrumb > li a {
+    padding: 2px 5px;
+}
+
+.breadcrumb-button {
+    bottom: 0;
+    margin: 0;
+    position: absolute;
+    right: 15px;
+}
+
+.breadcrumb-button .singlebutton div {
+    margin: 0;
+}
+
+.btn-rombo {
+    background-image: url(https://univirtual.utp.edu.co/campus_univirtual/theme/formacionutp/pix/r1.png);
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    color: #fff;
+    display: table-cell;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.course-content .current {
+    background-color: #F5F7D2;
+    border-radius: 6px;
+}
+
+.course-content ul li.section.main {
+    border-bottom: 2px dotted #d2d73c;
+}
+
+.dropdown-menu {
+    background-color: #00407B;
+    border: 0;
+    border-radius: 0;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    font-size: 16px;
+    min-width: 300px;
+    padding: 0;
+    text-shadow: none;
+}
+
+.dropdown-menu>li.no-tiene, .dropdown-menu>li>a {
+    background-color: rgba(0,0,0,0.2);
+    color: #FFFFFF;
+    padding: 8px 15px 8px 35px;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.dropdown-menu .divider {
+    margin: 0;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.enlaces_box {
+    padding: 0 10px 5px;
+}
+
+.enlace_miembros {
+    text-align: right;
+}
+
+.fotousuario {
+    border: 1px #D2D73C dotted;
+}
+
+.herramientas_comunicacion {
+    background: #00407B;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+}
+
+.herramientas_comunicacion strong {
+    color: #D2D73C;
+    font-weight: 600;
+}
+
+img.iconhelp, .helplink img {
+    margin-right: 5px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.mform .fcontainer .fitem .felement input[type="text"], .mform fieldset .fitem .felement input[type="text"], .mform .fcontainer .fitem .felement input[type="password"], .mform fieldset .fitem .felement input[type="password"] {
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #666666;
+
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.mform .fcontainer .fitem .felement input[type="text"]:focus, .mform fieldset .fitem .felement input[type="text"]:focus, .mform .fcontainer .fitem .felement input[type="password"]:focus, .mform fieldset .fitem .felement input[type="password"]:focus {
+    border-color: #D2D73C;
+    box-shadow: 0 0 8px rgba(210, 215, 32, 0.6)
+}
+
+.miembros_campus {
+    display: inline-block;
+}
+
+.miembros_campus img {
+    vertical-align: inherit;
+}
+
+.moodleheader {
+    margin: 1.5em 0;
+    position: relative;
+}
+
+.navbar {
+    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.6);
+}
+@media (min-width:768px) {
+    .navbar {
+        border-radius: 0px
+    }
+}
+
+.navbar-collapse {
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
+}
+@media (min-width:768px) {
+    .navbar-collapse {
+        box-shadow:none
+    }
+}
+
+.navbar-default {
+    background-color: #00407B;
+    border-color: rgba(0,0,0,0.2);
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand {
+    transition: all 0.2s linear;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #D2D73C;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: rgba(0,0,0,0.2);
+}
+
+.navbar-default .navbar-nav>li>a {
+    border-bottom: 5px solid #00407b;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    background-color: rgba(255,255,255,0.1);
+    border-bottom: 5px solid #D2D73C;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: rgba(255,255,255,0.1);
+    border-bottom: 5px solid #D2D73C;
+}
+
+@media (max-width:767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+        background-color: rgba(255,255,255,0.2);
+    }
+}
+
+.navbar-default .navbar-toggle {
+    border: 1px solid #00407B;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width:767px) {
+    .navbar-nav .open .dropdown-menu {
+        box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
+        color: #FFFFFF;
+        padding: 0;
+        text-shadow: none;
+    }
+    .navbar-nav .open .dropdown-menu>li.no-tiene, .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 8px 15px 8px 35px;
+    }
+}
+
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
+}
+
+.nota_herramientas {
+    background: #F5F7D2;
+    border-radius: 8px;
+    display: table;
+    font-size: 0.9em;
+    padding: 15px 5px;
+}
+
+.nota_herramientas div {
+    display: table-cell;
+    padding: 20px;
+    vertical-align: middle;
+}
+
+.numero_leccion {
+    background: #D2D73C;
+    border: 4px solid #FFF;
+    border-radius: 20px;
+    padding: 3px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: #00407B;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3) inset;
+    font-weight: bold;
+}
+
+.panel, .block, .forumpost {
+    border: 1px solid #D2D73C;
+    border-radius: 6px;
+    box-shadow: 0 0 0;
+    padding: 5px;
+}
+
+.panel-default>.panel-heading, .box.message table td.heading, .box.message .messagearea .messagerecent .singlemessage .otheruser, .block .header {
+    border-radius: 4px;
+    background-color: #D2D73C;
+    border-color:#ddd;
+}
+
+.salon_virtual {
+    background: #D2D73C;
+    border-left: 6px solid #00407B;
+    color: #333333;
+    font-size: 0.9em;
+    line-height: 1.3;
+    padding: 10px;
+}
+
+.salon_virtual .agenda {
+    background-color: #00407B;
+    border-radius: 8px;
+    padding: 0 5px;
+    text-align: center;
+    transform: scale(0.9);
+    transition: all 0.2s linear;
+}
+
+.salon_virtual .agenda:hover {
+    transform: scale(1);
+}
+
+.salon_virtual .agenda.grabacion {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.salon_virtual .agenda .fecha {
+    background: #F5F7D2;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.25);
+}
+
+.salon_virtual .agenda .dia {
+    font-size: 3.5em;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 1px 1px #FFF;
+}
+
+.salon_virtual .agenda .año {
+    color: #333333;
+}
+
+.salon_virtual .agenda .mes, .salon_virtual .agenda .hora {
+    color: #FFFFFF;
+    padding: 4px 0;
+}
+
+.section .activity {
+    background: #D2D73C;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.25);
+    margin-bottom: 10px !important;
+}
+
+.section .activity .availabilityinfo, .section .activity .contentafterlink {
+    display: initial;
+    font-size: 0.8em;
+}
+
+.section .activity.label {
+    box-shadow: none;
+}
+
+.section .activity .actions {
+    left: 15px;
+    position: relative;
+}
+
+.section .activity .activityinstance {
+    display: block;
+    min-width: inherit;
+    min-height: inherit;
+}
+
+.section .moodle-actionmenu .iconsmall {
+    background: #FFFFFF;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.course-content ul.section {
+    margin: 0;
+}
+
+.titulo_box {
+    background: #D2D73C;
+    border-radius: 6px 6px 0 0;
+}
+
+.titulo_box h3 {
+    padding: 3px 12px;
+    font-size: 0.9em;
+}
+
+.usuario {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.usuario a {
+    font-size: 0.9em;
+}
+
+/**UTILIDADES JS IFRAME SEMITRANSPARENTE*/
+/****************************************************************************/
+/******************** Div transparente, y pantalla nueva ********************/
+/****************************************************************************/
+#divSemitransparente {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    z-index:98;
+    background-color:#FFFFFF;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+}
+
+/****************************************************************************/
+/******************** div central, donde se inserta la página nueva *********/
+/****************************************************************************/
+#divCentral {
+    position:fixed;
+    z-index:98;
+}
+
+#cerrar{
+    width:14px;
+    height:14px;
+    color:#00407B;
+    border: 2px solid #f1f3c4;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    float:right;
+    opacity:0.5;
+    margin:7px 2px;
+    background: #F5F7D2;
+}
+
+#cerrar:hover{
+    opacity:0.8;
+    -moz-box-shadow: 0px 0px 10px #666666;
+    -webkit-box-shadow: 0px 0px 10px #666666;
+    box-shadow: 0px 0px 10px #666666;
+}
+
+/************* BOTONES GUIA ADAPTACION ********************/
+
+.guia_adaptacion{
+    width: 310px;
+    background-color:#F5F7D2;
+    border-radius:7px;
+    padding:5px 10px;
+    border: 1px solid #D2D73C;
+}
+
+a.adaptacion {
+    display: block;
+    padding: 0px;
+    text-decoration: none;
+    border-radius:7px;
+    border: 1px solid #D2D73C;
+    font-size:16px;
+    background-color: #D2D73C;
+    background-image: linear-gradient(bottom, #D2D73C 70%, #F5F7D2 100%);
+    background-image: -o-linear-gradient(bottom, #D2D73C 70%, #F5F7D2 100%);
+    background-image: -moz-linear-gradient(bottom, #D2D73C 70%, #F5F7D2 100%);
+    background-image: -webkit-linear-gradient(bottom, #D2D73C 70%, #F5F7D2 100%);
+    background-image: -ms-linear-gradient(bottom, #D2D73C 70%, #F5F7D2 100%);
+    margin: 15px 0px;
+    box-shadow: 1px 2px 2px #999999;
+}
+
+a.adaptacion:hover {
+    background-color: #F5F7D2;
+    background-image: linear-gradient(bottom, #D2D73C 50%, #BABE27 100%);
+    background-image: -o-linear-gradient(bottom, #D2D73C 50%, #BABE27 100%);
+    background-image: -moz-linear-gradient(bottom, #D2D73C 50%, #BABE27 100%);
+    background-image: -webkit-linear-gradient(bottom, #D2D73C 50%, #BABE27 100%);
+    background-image: -ms-linear-gradient(bottom, #D2D73C 50%, #BABE27 100%);
+}
+
+.numero_adaptacion{
+    background-color:#F5F7D2;
+    padding:0 10px;
+    border-radius:5px;
+    font-weight:bold;
+    font-size:26px;
+    border: 1px solid #D2D73C;
+    text-shadow: 1px 1px #FFF;
+    box-shadow: inset 0px 0px 2px #666666;
+}
+/*Custom Navbar*/
+@media (min-width: 768px) and (max-width: 991px){
+    .navbar-collapse {
+        box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .collapse.in {
+        display: block !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-nav {
+        float:none;
+        margin: inherit;
+    }
+    .nav>li {
+        float:none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 20px;
+    }
+    .container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .boton-salir{
+        display:none;
+    }
+    .boton-salir-xs {
+        display: block;
+    }
+}
+@media (min-width: 992px) and (max-width: 1060px) {
+    .bienvenido{
+        display:none;
+    }
+}
+/*End Custom*/
+
+/*Custom Buscar Foros*/
+.forumsearch {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    padding: 0 15px;
+}
+.forumsearch form {
+    display: block !important;
+    position: relative;
+}
+.forumsearch input#search {
+    width: 49%;
+}
+.forumsearch input#searchforums {
+    width: 49%;
+}
+.forumsearch .helptooltip {
+    display: block;
+}
+@media (max-width:1218px) {
+    .forumsearch input#search {
+        width: 100%;
+    }
+    .forumsearch input#searchforums {
+        width: 100%;
+    };
+}
+@media (min-width:768px) and (max-width:991px) {
+    .forumsearch {
+        width: 33.33333333333333%;
+    }
+    .forumsearch input#search {
+        width: 100%;
+    }
+    .forumsearch input#searchforums {
+        width: 100%;
+    };
+}
+@media (max-width:767px) {
+    .forumsearch {
+        width: 100%;
+    }
+    .forumsearch input#search {
+        width: 54%;
+    }
+    .forumsearch input#searchforums {
+        width: 40%;
+    };
+}
+/*End Custom buscar Foros*
