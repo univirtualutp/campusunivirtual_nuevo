@@ -27,11 +27,11 @@ defined('MOODLE_INTERNAL') || die();
 
 
 // Message displayed to the user when they choose this theme.
-$string['choosereadme'] = 'Hey, I\'m Pregrado Theme';
+$string['choosereadme'] = 'Hey, I\'m Macro Learning Theme';
 
 
 // Human readable name of the plugin.
-$string['pluginname'] = 'Pregrado';
+$string['pluginname'] = 'Macro Learning';
 
 
 // Global

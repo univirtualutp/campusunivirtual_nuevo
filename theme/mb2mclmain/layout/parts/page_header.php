@@ -30,7 +30,7 @@ $showheadingbuttons = $OUTPUT->page_heading_button();//( ! $coursemenu && $OUTPU
 $cname = format_text( $COURSE->fullname, FORMAT_HTML );
 
 $coursename = $COURSE->id > 1 ? '<h1 class="h4 coursename"><a href="' . new moodle_url( $CFG->wwwroot . '/course/view.php',array( 'id'=> $COURSE->id ) ) . '">' .
-theme_mb2mclmain_wordlimit( $cname, theme_mb2mclmain_theme_setting( $PAGE, 'mcnamelimit', 20 ) ) . '</a></h1>' : '';
+theme_mb2mclmain_wordlimit( $cname  ) . '</a></h1>' : '';
 ?>
 <div class="theme-page-heading">
     <div class="container-fluid">
