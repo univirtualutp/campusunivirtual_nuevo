@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 ?>
 <div class="main-logo">
-	<a href="<?php echo $CFG->wwwroot; ?>" title="<?php echo theme_mb2mclmain_theme_setting($PAGE, 'logotitle','Pregrado Theme'); ?>">
-		<img src="<?php echo theme_mb2mclmain_logo_url($PAGE); ?>" alt="<?php echo theme_mb2mclmain_theme_setting($PAGE, 'logoalttext','Pregrado Theme'); ?>">
+	<a href="<?php echo $CFG->wwwroot; ?>" title="<?php echo theme_mb2mclmain_theme_setting($PAGE, 'logotitle','Macro Learning Theme'); ?>">
+		<img src="<?php echo theme_mb2mclmain_logo_url($PAGE); ?>" alt="<?php echo theme_mb2mclmain_theme_setting($PAGE, 'logoalttext','Macro Learning Theme'); ?>">
 	</a>
 </div>

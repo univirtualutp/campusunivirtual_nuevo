@@ -59,13 +59,13 @@ $temp->add($setting);
 	$name = 'theme_mb2mclmain/logotitle';
 	$title = get_string('logotitle','theme_mb2mclmain');
 	$desc = get_string('logotitledesc', 'theme_mb2mclmain');
-	$setting = new admin_setting_configtext($name, $title, $desc, 'Pregrado Theme');
+	$setting = new admin_setting_configtext($name, $title, $desc, 'Macro Learning Theme');
 	$temp->add($setting);
 
 	$name = 'theme_mb2mclmain/logoalttext';
 	$title = get_string('logoalttext','theme_mb2mclmain');
 	$desc = get_string('logoalttextdesc', 'theme_mb2mclmain');
-	$setting = new admin_setting_configtext($name, $title, $desc, 'Pregrado Theme');
+	$setting = new admin_setting_configtext($name, $title, $desc, 'Macro Learning Theme');
 	$temp->add($setting);
 
 	$name = 'theme_mb2mclmain/logospacer';
