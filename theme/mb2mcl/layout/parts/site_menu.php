@@ -26,14 +26,23 @@ defined('MOODLE_INTERNAL') || die();
 
 $sitemenu = theme_mb2mcl_theme_setting($PAGE,'sitemnu');
 
+
+
 if ( $sitemenu && isloggedin() && ! isguestuser() ) : ?>
 <div id="site-menu">
 	<div class="container-fluid">
-    	<div class="row">
-        	<div class="col-md-12" style="min-height:0;">
+		<!-- ajuste template alex -->
+		<div class="row course-nav justify-content-center">
+				<?php echo theme_mb2mcl_get_list_of_sections() ?>
+		</div>
+		<!-- fin ajuste template alex -->
+
+		<div class="row">
+			<div class="col-md-12" style="min-height:0;">
             	<?php echo theme_mb2mcl_site_menu(); ?>
             </div>
         </div>
+
     </div>
 </div>
 <a href="#" class="show-sitemenu"></a>

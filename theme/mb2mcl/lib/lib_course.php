@@ -527,7 +527,7 @@ function theme_mb2mcl_is_toc()
 
 
 
-/*
+/* 
  *
  * Method to get course sections
  *
@@ -621,6 +621,45 @@ function theme_mb2mcl_module_sections( $block = false )
 
 	return $output;
 
+}
+
+/* 
+ *
+ * Method to get list of sections
+ *
+ */
+
+function theme_mb2mcl_get_list_of_sections(){
+
+	global $PAGE,$COURSE;
+	$output = '<ul id="course-menu">';
+	$sections = get_fast_modinfo($COURSE)->get_section_info_all();
+	$param = '';
+
+	if(isset($_GET['section'])){
+		$param = $_GET['section'];
+	} else {
+		$param = '0';
+	}
+
+
+	foreach ($sections as $section) {
+    $sectionName = $section->name;
+    $sectionURL = course_get_url($COURSE, $section->section);
+	$sectionNumber = $section->section;
+	$isactive = ($param == $sectionNumber) ? 'active': ' ';
+
+
+    // Imprime el enlace a la sección con su URL
+    $output .= '<li class="list-item course-tab-'. $sectionNumber .' '. $isactive . '"><a href="' . $sectionURL . '" class="button-'. $sectionNumber .'">' . $sectionName . '</a> </li>';
+	
+	}
+
+	$output.='</ul>';
+
+
+
+	return $output;
 }
 
 
