@@ -104,7 +104,7 @@ elseif ($sidePre || $sidePost)
 
 
 						<ul class="nav nav-tabs mainProfileUvt" id="myTab" role="tablist">
-							
+
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#content-a" type="button" role="tab" aria-controls="home" aria-selected="true">
 									
@@ -143,15 +143,7 @@ elseif ($sidePre || $sidePost)
 
 								</button>
 							</li>
-							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#content-e" type="button" role="tab" aria-controls="contact" aria-selected="false">
 
-								<?php if (theme_mb2mclmain_isblock($PAGE, 'tab-e')) : ?>
-									<?php echo $OUTPUT->blocks('tab-e', theme_mb2mclmain_block_cls($PAGE, 'tab-e','none')); ?>
-								<?php endif; ?>		
-
-								</button>
-							</li>
 
 						</ul>
 
@@ -186,15 +178,10 @@ elseif ($sidePre || $sidePost)
 								<?php endif; ?>
 
 							</div>
-							<div class="tab-pane fade" id="content-e" role="tabpanel" aria-labelledby="content-e-tab">
-									
-								<?php if (theme_mb2mclmain_isblock($PAGE, 'content-e')) : ?>
-									<?php echo $OUTPUT->blocks('content-e', theme_mb2mclmain_block_cls($PAGE, 'content-e','none')); ?>
-								<?php endif; ?>
 
-							</div>
 
 						</div>
+
 
 
 
