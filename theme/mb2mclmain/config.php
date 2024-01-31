@@ -42,7 +42,7 @@ $THEME->haseditswitch = false;
 // Define region arrays
 $fpRegions = array('side-pre','side-post','content-top','content-bottom','slider','adminblock','bottom-a','bottom-b','bottom-c','bottom-d','page-sidebar');
 $incourseRegions = array('side-pre','content-top','content-bottom','slider','adminblock','bottom-a','bottom-b','bottom-c','bottom-d','page-sidebar');
-$defRegions = array('side-pre','side-post','content-top','content-bottom','adminblock','bottom-a','bottom-b','bottom-c','bottom-d','page-sidebar');
+$defRegions = array('side-pre','side-post','content-top','content-bottom','adminblock','bottom-a','bottom-b','bottom-c','bottom-d','page-sidebar','tab-a','tab-b','tab-c','tab-d','tab-e','content-a','content-b','content-c','content-d','content-e');
 $def2ColsRegions = array('side-pre','content-top','content-bottom','adminblock','bottom-a','bottom-b','bottom-c','bottom-d','page-sidebar');
 $oneColRegion = array('content-top','content-bottom','adminblock','bottom-a','bottom-b','bottom-c','bottom-d','page-sidebar');
 

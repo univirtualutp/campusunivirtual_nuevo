@@ -24,7 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-
 $sidePre = theme_mb2mclmain_isblock($PAGE, 'side-pre');
 $sidePost = theme_mb2mclmain_isblock($PAGE, 'side-post');
 $sidebarPos = theme_mb2mclmain_theme_setting($PAGE, 'sidebarpos', 'classic');
@@ -88,9 +87,128 @@ elseif ($sidePre || $sidePost)
 						<?php echo theme_mb2mclmain_check_plugins(); ?>
                     <?php endif; ?>
                 	<?php echo $OUTPUT->course_content_header(); ?>
+
+
 					<?php if (theme_mb2mclmain_isblock($PAGE, 'content-top')) : ?>
                 		<?php echo $OUTPUT->blocks('content-top', theme_mb2mclmain_block_cls($PAGE, 'content-top','none')); ?>
              		<?php endif; ?>
+
+
+
+
+
+
+
+                	<?php if ( $PAGE->bodyid == 'page-my-index'):  ?>
+
+
+
+						<ul class="nav nav-tabs mainProfileUvt" id="myTab" role="tablist">
+							
+							<li class="nav-item" role="presentation">
+								<button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#content-a" type="button" role="tab" aria-controls="home" aria-selected="true">
+									
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'tab-a')) : ?>
+									<?php echo $OUTPUT->blocks('tab-a', theme_mb2mclmain_block_cls($PAGE, 'tab-a','none')); ?>
+								<?php endif; ?>
+
+
+								</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#content-b" type="button" role="tab" aria-controls="profile" aria-selected="false">
+									
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'tab-b')) : ?>
+									<?php echo $OUTPUT->blocks('tab-b', theme_mb2mclmain_block_cls($PAGE, 'tab-b','none')); ?>
+								<?php endif; ?>
+
+								</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#content-c" type="button" role="tab" aria-controls="contact" aria-selected="false">
+								
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'tab-c')) : ?>
+									<?php echo $OUTPUT->blocks('tab-c', theme_mb2mclmain_block_cls($PAGE, 'tab-c','none')); ?>
+								<?php endif; ?>
+								
+							</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#content-d" type="button" role="tab" aria-controls="contact" aria-selected="false">
+									
+
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'tab-d')) : ?>
+									<?php echo $OUTPUT->blocks('tab-d', theme_mb2mclmain_block_cls($PAGE, 'tab-d','none')); ?>
+								<?php endif; ?>								
+
+								</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#content-e" type="button" role="tab" aria-controls="contact" aria-selected="false">
+
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'tab-e')) : ?>
+									<?php echo $OUTPUT->blocks('tab-e', theme_mb2mclmain_block_cls($PAGE, 'tab-e','none')); ?>
+								<?php endif; ?>		
+
+								</button>
+							</li>
+
+						</ul>
+
+
+						<div class="tab-content" id="myTabContent">
+
+							<div class="tab-pane fade show active" id="content-a" role="tabpanel" aria-labelledby="content-a-tab">
+								
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'content-a')) : ?>
+									<?php echo $OUTPUT->blocks('content-a', theme_mb2mclmain_block_cls($PAGE, 'content-a','none')); ?>
+								<?php endif; ?>
+								
+							</div>
+							<div class="tab-pane fade" id="content-b" role="tabpanel" aria-labelledby="content-b-tab">
+
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'content-b')) : ?>
+									<?php echo $OUTPUT->blocks('content-b', theme_mb2mclmain_block_cls($PAGE, 'content-b','none')); ?>
+								<?php endif; ?>
+						
+							</div>
+							<div class="tab-pane fade" id="content-c" role="tabpanel" aria-labelledby="content-c-tab">
+									
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'content-c')) : ?>
+									<?php echo $OUTPUT->blocks('content-c', theme_mb2mclmain_block_cls($PAGE, 'content-c','none')); ?>
+								<?php endif; ?>
+
+							</div>
+							<div class="tab-pane fade" id="content-d" role="tabpanel" aria-labelledby="content-d-tab">
+									
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'content-d')) : ?>
+									<?php echo $OUTPUT->blocks('content-d', theme_mb2mclmain_block_cls($PAGE, 'content-d','none')); ?>
+								<?php endif; ?>
+
+							</div>
+							<div class="tab-pane fade" id="content-e" role="tabpanel" aria-labelledby="content-e-tab">
+									
+								<?php if (theme_mb2mclmain_isblock($PAGE, 'content-e')) : ?>
+									<?php echo $OUTPUT->blocks('content-e', theme_mb2mclmain_block_cls($PAGE, 'content-e','none')); ?>
+								<?php endif; ?>
+
+							</div>
+
+						</div>
+
+
+
+					<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
                 	<?php echo $OUTPUT->main_content(); ?>
                     <?php if (theme_mb2mclmain_isblock($PAGE, 'content-bottom')) : ?>
                 		<?php echo $OUTPUT->blocks('content-bottom', theme_mb2mclmain_block_cls($PAGE, 'content-bottom','none')); ?>

@@ -112,7 +112,9 @@ function theme_mb2mclmain_admin_regions ()
 		'bottom-a',
 		'bottom-b',
 		'bottom-c',
-		'bottom-d'
+		'bottom-d',
+		'tab-a',
+		'tab-b','tab-c','tab-d','tab-e','content-a','content-b','content-c','content-d','content-e'
 	);
 
 	return $regions;

@@ -99,6 +99,16 @@ $string['region-bottom-d'] = 'Bottom D';
 $string['region-content-top'] = 'Content Top';
 $string['region-content-bottom'] = 'Content Bottom';
 $string['region-page-sidebar'] = 'Page Sidebar';
+$string['region-tab-a'] = 'tab a';
+$string['region-tab-b'] = 'tab b';
+$string['region-tab-c'] = 'tab c';
+$string['region-tab-d'] = 'tab d';
+$string['region-tab-e'] = 'tab e';
+$string['region-content-a'] = 'Content a';
+$string['region-content-b'] = 'Content b';
+$string['region-content-c'] = 'Content c';
+$string['region-content-d'] = 'Content d';
+$string['region-content-e'] = 'Content e';
 
 
 // Frontend
