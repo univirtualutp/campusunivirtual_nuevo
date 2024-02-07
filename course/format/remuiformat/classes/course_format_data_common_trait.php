@@ -29,6 +29,7 @@ use cm_info;
 use core_courseformat\output\local\content\section;
 use core_completion\progress;
 use core\activity_dates;
+use core_course\output\activity_completion;
 require_once($CFG->dirroot.'/course/format/remuiformat/classes/mod_stats.php');
 
 /**
@@ -108,7 +109,7 @@ class course_format_data_common_trait {
      * @param array            $displayoptions  Display options array
      */
     public function activity_completion($course, $completioninfo, $activitydetails, $mod, $courserenderer, $displayoptions) {
-        global $CFG, $USER;
+        global $CFG, $USER, $OUTPUT;
         if (!$completioninfo->is_enabled()) {
             return $activitydetails;
         }
@@ -123,11 +124,17 @@ class course_format_data_common_trait {
         if ($course->showcompletionconditions == COMPLETION_SHOW_CONDITIONS) {
             // Show the activity information output component.
             $cmcompletion = \core_completion\cm_completion_details::get_instance($mod, $USER->id);
-            $activitydetails->completion = $courserenderer->activity_information(
-                $mod,
-                $cmcompletion,
-                []
-            );
+            if ($CFG->backup_release <= '4.2') {
+                $activitydetails->completion = $courserenderer->activity_information(
+                    $mod,
+                    $cmcompletion,
+                    []
+                );
+            } else {
+                $completion = new activity_completion($mod, $cmcompletion);
+                $completiondata = $completion->export_for_template($OUTPUT);
+                $activitydetails->completion = $OUTPUT->render_from_template("core_courseformat/local/content/cm/activity_info", $completiondata);
+            }
             $activitydetails->completion = str_replace("btn-outline-secondary", "btn-secondary", $activitydetails->completion);
             // Check if completion is enabled. Set manual completion only if it not automatic.
             if ($cmcompletion->has_completion() && $cmcompletion->is_automatic() != true) {
@@ -293,6 +300,9 @@ class course_format_data_common_trait {
 
             $data->hiddenmessage = $this->course_section_availability($course, $section);
 
+            if(trim(strip_tags($data->hiddenmessage)) == ""){
+                $data->hiddenmessage = false;
+            }
             if ($courseformat->is_section_current($section)) {
                 $data->iscurrent = true;
                 $data->highlightedlabel = get_string('highlight');
@@ -335,6 +345,9 @@ class course_format_data_common_trait {
 
                 $data->activityinfo = $extradetails['activityinfo'];
                 $data->progressinfo = $extradetails['progressinfo'];
+                if(!$course->enablecompletion){
+                    $data->progressinfo = false;
+                }
 
                 // Set Marker.
                 if ($course->marker == $sectionindex) {
@@ -353,6 +366,13 @@ class course_format_data_common_trait {
                 }
                 $data->activityinfostring = implode($extradetails['activityinfo']);
                 $data->progressinfo = $extradetails['progressinfo'];
+                $data->checkrightsidecontent = true;
+                if(!$course->enablecompletion){
+                    $data->progressinfo = false;
+                }
+                if(!$data->progressinfo && !$editing){
+                    $data->checkrightsidecontent = false;
+                }
                 $data->sectionactivities = $this->course_section_cm_list(
                     $course, $section
                 );
@@ -945,6 +965,9 @@ class course_format_data_common_trait {
                     $courserenderer,
                     $displayoptions
                 );
+                if (!$mod->visible) {
+                    $activitydetails->modhiddenfromstudents = true;
+                }
                 $activitydetails->viewurl = $mod->url;
                 $activitydetails->title = $this->course_section_cm_name($mod, $displayoptions);
                 if (array_search($mod->modname, array('folder')) !== false) {
@@ -995,7 +1018,7 @@ class course_format_data_common_trait {
                     $modicons .= $mod->afterediticons;
                     $activitydetails->modicons = $modicons;
                 }
-                $activitydetails->summary = format_text($activitydetails->summary);
+                $activitydetails->summary = format_text($activitydetails->summary, FORMAT_HTML);
                 $output[] = $activitydetails;
                 $count++;
             }
@@ -1015,6 +1038,7 @@ class course_format_data_common_trait {
             $export->generalsection['index'] = 0;
             $generalsectionsummary = $renderer->format_summary_text($generalsection);
         if (empty($generalsectionsummary)) {
+            $course->summary = file_rewrite_pluginfile_urls($course->summary, 'pluginfile.php', $coursecontext->id, 'course', 'summary', null) ;
             $generalsectionsummary = $course->summary;
         }
         if ($generalsection) {
@@ -1055,7 +1079,7 @@ class course_format_data_common_trait {
             $export->generalsection['summary'] = $renderer->abstract_html_contents(
                 $generalsectionsummary, 400
             );
-            $export->generalsection['fullsummary'] = $generalsectionsummary;
+            $export->generalsection['fullsummary'] = format_text($generalsectionsummary, FORMAT_HTML);
 
             // Get course image if added.
             $imgurl = $this->display_file(

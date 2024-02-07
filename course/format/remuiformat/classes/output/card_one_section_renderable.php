@@ -246,7 +246,9 @@ class format_remuiformat_card_one_section implements renderable, templatable {
 
                 $completiondata = $completioninfo->get_data($mod, true);
                 $activitydetails = new \stdClass();
-
+                if (!$mod->visible) {
+                    $activitydetails->modhiddenfromstudents = true;
+                }
                 if ($mod->visible == 0) {
                     $activitydetails->notavailable = true;
                     if (has_capability('moodle/course:viewhiddensections', $context, $USER)) {
@@ -280,7 +282,7 @@ class format_remuiformat_card_one_section implements renderable, templatable {
                     $this->courseformatdatacommontrait->course_section_cm_text($mod, $displayoptions),
                     $this->settings
                 );
-
+                $activitydetails->summary = format_text( $activitydetails->summary, FORMAT_HTML);
                 // In case of label activity send full text of cm to open in modal.
                 if (array_search($mod->modname, array('label', 'folder')) !== false) {
                     $activitydetails->viewurl = $mod->modname.'_'.$mod->id;
@@ -289,6 +291,7 @@ class format_remuiformat_card_one_section implements renderable, templatable {
                         $mod,
                         $displayoptions
                     );
+                    $activitydetails->fullcontent = format_text($activitydetails->fullcontent, FORMAT_HTML);
                 }
 
                 $activitydetails->completed = $completiondata->completionstate;
