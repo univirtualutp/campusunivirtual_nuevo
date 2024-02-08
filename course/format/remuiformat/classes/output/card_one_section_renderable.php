@@ -291,7 +291,8 @@ class format_remuiformat_card_one_section implements renderable, templatable {
                         $mod,
                         $displayoptions
                     );
-                    $activitydetails->fullcontent = format_text($activitydetails->fullcontent, FORMAT_HTML);
+                    //TODO: $activitydetails->fullcontent = format_text($activitydetails->fullcontent, FORMAT_HTML);
+                    //TODO: Actualización del componente rompe el contenido html5, tener en revisión hacia una nueva actualización o rollback descomentar si se ha hallado una solución limpia
                 }
 
                 $activitydetails->completed = $completiondata->completionstate;
