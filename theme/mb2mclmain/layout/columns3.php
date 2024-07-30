@@ -24,6 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+global $DB; // codigo por univirtual
 $sidePre = theme_mb2mclmain_isblock($PAGE, 'side-pre');
 $sidePost = theme_mb2mclmain_isblock($PAGE, 'side-post');
 $sidebarPos = theme_mb2mclmain_theme_setting($PAGE, 'sidebarpos', 'classic');
@@ -107,7 +108,7 @@ elseif ($sidePre || $sidePost)
 
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#content-a" type="button" role="tab" aria-controls="home" aria-selected="true">
-									
+							
 								<?php if (theme_mb2mclmain_isblock($PAGE, 'tab-a')) : ?>
 									<?php echo $OUTPUT->blocks('tab-a', theme_mb2mclmain_block_cls($PAGE, 'tab-a','none')); ?>
 								<?php endif; ?>
@@ -151,11 +152,377 @@ elseif ($sidePre || $sidePost)
 						<div class="tab-content" id="myTabContent">
 
 							<div class="tab-pane fade show active" id="content-a" role="tabpanel" aria-labelledby="content-a-tab">
+
+							<!-- SECCION ACCESO RÁPIDO -->
+
+							<div class="seccion-acceso-rapido">
+
+							<div class="header-acceso mt-4 border-bottom pt-5 pl-4 pb-4" style="background-image:url(https://img.playbook.com/9ZnGzQNH478OK9w9ak51tzDoS7EALoui74lDQyvvHvA/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzE1MzMzMDdm/LTM3YWMtNDc3MS05/YmZhLWU0YTg4ZDY1/MTQ4Ng);background-size:cover;border-radius:0.4rem 0.4rem 0 0; margin-left:-0.80rem">
+								<h2> <i class="fas fa-rocket"></i> Aulas de Acceso Rápido </h2>
+							</div>	
+									<!-- CARDS CONTAINER -->
+							<div class="cardlists-container justify-content-start row py-5" style="row-gap: 1rem;">
+
+									<?php  // Nuevo front ?>
 								
+								<?php 
+
+								/*
+									$courses = get_courses();
+									print_r($courses); 
+									//ojo
+									$courses2 = enrol_get_users_courses($USER->id, true);
+									print_r($courses2); 
+									//print_r($USER)
+									$courses = enrol_get_my_courses();;
+									print_r($courses); 
+
+								*/
+									
+									
+									$courses = enrol_get_my_courses('enddate');
+									?>
+									<?php
+									foreach ($courses as $course): ?>
+
+									
+									<?php	$mycourse = get_course($course->id);
+											//print_r($mycourse);
+											//echo theme_mb2mclmain_course_panel(); // obtiene las actividades del curso
+											//theme_mb2mclmain_get_section_activities(); // actividades de la sección
+											// 🖖🏼 print_r(get_fast_modinfo($course->id)); // información detallada de los módulos del curso
+											//✅ print_r(get_array_of_activities($course->id)); actividades del curso
+
+											//Fecha del curso
+											/*$timestamp = $mycourse->startdate;
+											$formatted_date = date('Y-m-d', $timestamp);
+											print_r($formatted_date); //1714194000*/
+											
+
+											//
+									
+											$category = $DB->get_record('course_categories',array('id'=>$mycourse->category));
+											
+											/*
+											ver actividades
+											$activities = get_array_of_activities($course->id);
+											// Verificar si $activities es un array
+											if (is_array($activities)) {
+												// Recorrer el array con un bucle foreach
+												foreach ($activities as $activity) {
+													// Aquí puedes hacer lo que necesites con cada elemento del array
+													print_r($activity);
+												}
+											} else {
+												echo "No se encontraron actividades.";
+											}
+											*/
+
+											
+
+											
+									?>
+
+
+
+
+									
+									<?php 
+
+									$current_time = time();
+									if($mycourse->category != 29 && $mycourse->enddate > $current_time ) :?>
+									
+									<div class="card col-3 border mx-2 p-3">
+										<h4 class="my-0 " style="font-size:1.25rem;"> <i class="fas fa-chalkboard" style="color:#00B4DD; display:inline-block; margin-right:4px"></i> <?php print_r($mycourse->fullname); ?> </h4>
+
+												<?php 
+										$modlink = new moodle_url( '/course/view.php', array('id'=>$course->id) );
+										?>
+										<!-- Barra de progreso -->
+										
+										<div class="barra py-2 mb-3 " style="position:relative">
+											Avance <?php echo theme_mb2mclmain_dashboard_course_progress_bar($mycourse); ?>%
+											<div class="counter" style="background:#59D06B; height:2px; width:<?php echo theme_mb2mclmain_dashboard_course_progress_bar($mycourse);?>%; border-radius:2px; position:relative; z-index:10"></div>
+											<div class="counter" style="background:#dedede; height:2px; width:100%; border-radius:2px;position:absolute; margin-top:-2px"></div>
+										</div>
+										<!-- FIn Barra de progreso -->
+
+										<div class="actividades">
+											<div class="subtitle">
+												<h5 class="my-0">Actividades Abiertas</h5>
+											</div>
+<!-- +=========================+ -->
+
+
+<div class="items-container">
+    <?php
+    $display = 'd-block';
+    $activities = get_array_of_activities($course->id);
+    $MAX_NUM_ACTIVITIES = 2;
+    $current_time = time(); // Obtener el tiempo actual
+    $activities_shown = 0; // Contador de actividades mostradas
+    $activities_found = false; // Variable para rastrear si se han encontrado actividades válidas
+    $additional_activities = []; // Almacenar actividades adicionales
+
+    foreach ($activities as $activity): 
+        // Filtro que no se muestre las que son tipo label
+        if ($activity->mod !== 'label'):
+            // Verificar y mostrar las fechas si están presentes
+            $timestamp = null;
+            $date_label = '';
+
+            if (isset($activity->customdata['cutoffdate']) && $activity->customdata['cutoffdate'] >= $current_time) {
+                $timestamp = $activity->customdata['cutoffdate'];
+                $date_label = 'Fecha límite: ';
+            } elseif (isset($activity->customdata['duedate']) && $activity->customdata['duedate'] >= $current_time) {
+                $timestamp = $activity->customdata['duedate'];
+                $date_label = 'Fecha de entrega: ';
+            } elseif (isset($activity->customdata['allowsubmissionsfromdate']) && $activity->customdata['allowsubmissionsfromdate'] >= $current_time) {
+                $timestamp = $activity->customdata['allowsubmissionsfromdate'];
+                $date_label = 'Fecha de inicio de entregas: ';
+            } elseif (isset($activity->customdata['deadline']) && $activity->customdata['deadline'] >= $current_time) {
+                $timestamp = $activity->customdata['deadline'];
+                $date_label = 'Fecha límite: ';
+            }
+
+            if ($timestamp !== null):
+                $activities_found = true; // Marcar que se ha encontrado al menos una actividad válida
+                $formatted_date = date('d-m-Y', $timestamp);
+                $modlink2 = new moodle_url('/mod/' . $activity->mod . '/view.php', array('id' => $activity->cm));
+                
+                if ($activities_shown < $MAX_NUM_ACTIVITIES):
+                    $activities_shown++; // Incrementar el contador de actividades mostradas
+                    ?>
+                    <!-- Actividad item -->
+                    <div class="actividad">
+                        <i class="fa fa-file-text-o"></i>
+                        <a href="<?php echo $modlink2 ?>" class="d-inline-block p-2" style="color:#02172b; text-decoration:underline">
+                            <?php echo $activity->name; ?>
+                        </a>
+                        <span class="d-block mb-2" style="font-size:0.8rem; line-height: 0;"><?php echo $date_label . $formatted_date; ?></span>
+                    </div>
+                    <!-- Fin Actividad Item -->
+                <?php
+                else:
+                    // Agregar actividad a la lista de adicionales
+                    $additional_activities[] = [
+                        'modlink' => $modlink2,
+                        'name' => $activity->name,
+                        'date_label' => $date_label,
+                        'formatted_date' => $formatted_date
+                    ];
+                endif;
+            endif;
+        endif;
+    endforeach;
+
+    if (!$activities_found): // Si no se ha encontrado ninguna actividad válida
+        ?>
+        <p>No hay actividades abiertas.</p>
+        <?php $display = 'd-none' ?>
+    <?php endif; ?>
+
+    <?php 
+    if ($activities_found && count($additional_activities) > 0): ?>
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#additionalActivities" aria-expanded="false" aria-controls="additionalActivities">
+        Ver más actividades
+        </button>
+        <div class="collapse" id="additionalActivities">
+            <?php foreach ($additional_activities as $activity): ?>
+                <!-- Actividad adicional item -->
+                <div class="actividad">
+                    <i class="fa fa-file-text-o"></i>
+                    <a href="<?php echo $activity['modlink'] ?>" class="d-inline-block p-2" style="color:#02172b; text-decoration:underline">
+                        <?php echo $activity['name']; ?>
+                    </a>
+                    <span class="d-block mb-2" style="font-size:0.8rem; line-height: 0;"><?php echo $activity['date_label'] . $activity['formatted_date']; ?></span>
+                </div>
+                <!-- Fin Actividad adicional item -->
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+
+<!-- +=========================+ -->
+
+
+
+										</div>
+
+										<div class="programa  mt-3">	
+											<span class="py-0 px-1" style="display:inline-block; border-radius:4px; background-color:#02172b; color:white; font-size:0.7rem"><?php echo $category->name ?></span>
+											<div class="separator" class="d-block"></div>
+											<a href="<?php echo $modlink  ?>" class="cta d-inline-block px-3 py-1 mt-1" style="background-color:#f2de3c; color:#02172b; font-weight:bold; border-radius:4px; font-size:0.8rem ;">Ir al curso</a>
+										</div>
+
+
+
+									</div>
+
+									<?php endif;?>
+
+
+									<?php endforeach; ?>
+								
+								<?php  // FIN Nuevo front ?>
+
+
+
+							</div> 
+								<!-- FIN CARD CONTAINER -->
+								
+
+							</div>
+							<!-- FIN SECCIÓN ACCESO RÁPIDO -->
+
+
+
+
+<!-- SECCIÓN METACURSOS -->
+
+
+<?php
+// Obtener los metacursos
+$metacourses = enrol_get_my_courses();
+$metacourses_found = false;
+
+// Verificar si hay metacursos en la categoría específica
+foreach ($metacourses as $metacourse) {
+    if ($metacourse->category == 29) {
+        $metacourses_found = true;
+        break;
+    }
+}
+?>
+<!-- SECCIÓN METACURSOS -->
+
+
+<?php
+// Obtener los metacursos
+$metacourses = enrol_get_my_courses();
+$metacourses_found = false;
+
+// Verificar si hay metacursos en la categoría específica
+foreach ($metacourses as $metacourse) {
+    if ($metacourse->category == 29) {
+        $metacourses_found = true;
+        break;
+    }
+}
+?>
+
+<?php if ($metacourses_found): ?>
+    <!-- SECCIÓN METACURSOS -->
+    <div class="seccion-metacursos">
+        <div class="header-acceso mt-4 border-bottom pt-5 pl-4 pb-4" style="background-image:url(https://img.playbook.com/QKPmHUmuFWOZP3BNwdTVlp8BF5DsBt1yWJuCzLKdsp0/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzMyYThlY2Nj/LWY4NzQtNDE5ZS1h/YTkxLTYzNWExODdi/NGNmYw);background-size:cover;border-radius:0.4rem 0.4rem 0 0; margin-left:-0.80rem">
+            <h2> <i class="fas fa-cubes"></i> Procesos de formación activos</h2>
+        </div>
+
+        <div class="cards-container justify-content-start row py-5">
+            <?php foreach ($metacourses as $metacourse): ?>
+                <?php if ($metacourse->category == 29): ?>
+                    <?php 
+                        $modlink3 = new moodle_url('/course/view.php', array('id' => $metacourse->id));
+                    ?>
+                    <!-- METACURSO -->
+                    <div class="card col-3 border mx-2 p-4">
+                        <h4 class="mt-0 metacurso"> 
+                            <a href="<?php echo $modlink3 ?>" style="display:block; width:100%; height:100%; font-size:1.25rem">
+                                <i class="fas fa-folder d-inline-block mr-1"></i>  <?php echo $metacourse->fullname ?>
+                            </a>
+                        </h4>
+                        <a href="<?php echo $modlink3 ?>"> Abrir</a>
+                    </div>
+                    <!-- FIN METACURSO -->
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <!-- FIN SECCIÓN METACURSOS -->
+<?php endif; ?>
+
+
+							<!-- FIN SECCIÓN METACURSOS -->
+
+
+<!-- SECCIÓN AULAS HISTÓRICAS -->
+
+<?php
+$archives = enrol_get_my_courses('enddate'); // Obtener todos los cursos archivados
+$current_time = time(); // Obtener el tiempo actual
+
+// Filtrar cursos archivados válidos
+$filtered_archives = array_filter($archives, function($archived) use ($current_time) {
+    return $archived->enddate < $current_time && $archived->category != 29;
+});
+
+// Verificar si hay cursos archivados válidos
+$has_archived_courses = !empty($filtered_archives);
+?>
+
+<?php if ($has_archived_courses): ?>
+    <div class="seccion-aulas">
+        <div class="header-acceso mt-4 border-bottom pt-5 pl-4 pb-4" style="background-image:url('https://img.playbook.com/2GWxFcRUx6v8AIwNR6E6L69kCwjLPScmRC_YE39LETg/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljL2U0OTNkMmJh/LWM1ODMtNGVjNy05/Y2Q5LWMyMjdmNjEz/YTBkOA');background-size:cover;border-radius:0.4rem 0.4rem 0 0; margin-left:-0.80rem">
+            <h2> <i class="fas fa-history"></i> Aulas históricas </h2>
+        </div>
+        
+        <div class="cards-container row py-5 justify-content-start align-items-start">
+            <?php 
+            $course_count = 0;
+            foreach($filtered_archives as $archived):
+                $formatted_course_date = date('d-m-Y', $archived->enddate);
+                $modlink4 = new moodle_url('/course/view.php', array('id' => $archived->id));
+                
+                if ($course_count < 3): 
+            ?>
+                    <div class="card col-3 border mx-2 p-3">
+                        <h4 class="mt-0 metacurso" style="font-size:1.25rem"> <i class="fas fa-archive d-inline-block mr-1"></i>  <?php echo $archived->fullname; ?></h4>
+                        <a href="<?php echo $modlink4; ?>"> Ir al curso </a>
+                        <p style="font-size:0.8rem">Fecha de finalización: <?php echo $formatted_course_date; ?></p>
+                    </div>
+            <?php 
+                else: 
+            ?>
+                    <div class="card col-3 border mx-2 p-3 collapse" id="additionalCourses">
+                        <h4 class="mt-0 metacurso" style="font-size:1.25rem"> <i class="fas fa-archive d-inline-block mr-1"></i>  <?php echo $archived->fullname; ?></h4>
+                        <a href="<?php echo $modlink4; ?>"> Ir al curso </a>
+                        <p style="font-size:0.8rem">Fecha de finalización: <?php echo $formatted_course_date; ?></p>
+                    </div>
+            <?php 
+                endif; 
+                $course_count++;
+            endforeach; 
+            ?>
+        </div>
+
+        <?php if ($course_count > 3): ?>
+            <div class="text-center my-3">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#additionalCourses" aria-expanded="false" aria-controls="additionalCourses">
+                    Otras asignaturas
+                </button>
+            </div>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
+<!-- FIN SECCIÓN AULAS HISTÓRICAS -->
+
+
+
+
+
+
+
+								
+								
+
 								<?php if (theme_mb2mclmain_isblock($PAGE, 'content-a')) : ?>
 									<?php echo $OUTPUT->blocks('content-a', theme_mb2mclmain_block_cls($PAGE, 'content-a','none')); ?>
 								<?php endif; ?>
 								
+								
+
 							</div>
 							<div class="tab-pane fade" id="content-b" role="tabpanel" aria-labelledby="content-b-tab">
 
