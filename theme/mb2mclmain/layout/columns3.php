@@ -230,7 +230,7 @@ elseif ($sidePre || $sidePost)
 									<?php 
 
 									$current_time = time();
-									if($mycourse->category != 31 && $mycourse->enddate > $current_time ) :?>
+									if($mycourse->category != 29 && $mycourse->enddate > $current_time ) :?>
 									
 									<div class="card col-3 border mx-2 p-3">
 										<h4 class="my-0 " style="font-size:1.25rem;"> <i class="fas fa-chalkboard" style="color:#00B4DD; display:inline-block; margin-right:4px"></i> <?php print_r($mycourse->fullname); ?> </h4>
@@ -269,23 +269,33 @@ elseif ($sidePre || $sidePost)
         if ($activity->mod !== 'label'):
             // Verificar y mostrar las fechas si están presentes
             $timestamp = null;
-            $date_label = '';
+            $date_label = '';            
 
-            if (isset($activity->customdata['cutoffdate']) && $activity->customdata['cutoffdate'] >= $current_time) {
+            if (isset($activity->customdata['cutoffdate'])) {
                 $timestamp = $activity->customdata['cutoffdate'];
                 $date_label = 'Fecha límite: ';
-            } elseif (isset($activity->customdata['duedate']) && $activity->customdata['duedate'] >= $current_time) {
+            } elseif (isset($activity->customdata['duedate'])) {
                 $timestamp = $activity->customdata['duedate'];
                 $date_label = 'Fecha de entrega: ';
-            } elseif (isset($activity->customdata['allowsubmissionsfromdate']) && $activity->customdata['allowsubmissionsfromdate'] >= $current_time) {
+            } elseif (isset($activity->customdata['allowsubmissionsfromdate'])) {
                 $timestamp = $activity->customdata['allowsubmissionsfromdate'];
                 $date_label = 'Fecha de inicio de entregas: ';
-            } elseif (isset($activity->customdata['deadline']) && $activity->customdata['deadline'] >= $current_time) {
+            } elseif (isset($activity->customdata['deadline'])) {
                 $timestamp = $activity->customdata['deadline'];
                 $date_label = 'Fecha límite: ';
             }
 
-            if ($timestamp !== null):
+            // Verificar la fecha en availability
+            $availability_timestamp = null;
+            if (isset($activity->availability)) {
+                $availability_data = json_decode($activity->availability, true);
+                if ($availability_data !== null && isset($availability_data['c'][0]['t'])) {
+                    $availability_timestamp = $availability_data['c'][0]['t'];
+                }
+            }
+
+            // Comprobar que la actividad esté dentro del rango de fechas: current_time >= availability y current_time <= fecha límite
+            if ($timestamp !== null && ($availability_timestamp === null || $current_time >= $availability_timestamp) && $current_time <= $timestamp):
                 $activities_found = true; // Marcar que se ha encontrado al menos una actividad válida
                 $formatted_date = date('d-m-Y', $timestamp);
                 $modlink2 = new moodle_url('/mod/' . $activity->mod . '/view.php', array('id' => $activity->cm));
@@ -325,7 +335,7 @@ elseif ($sidePre || $sidePost)
     <?php 
     if ($activities_found && count($additional_activities) > 0): ?>
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#additionalActivities" aria-expanded="false" aria-controls="additionalActivities">
-        Ver más actividades
+            Ver más actividades
         </button>
         <div class="collapse" id="additionalActivities">
             <?php foreach ($additional_activities as $activity): ?>
@@ -389,7 +399,7 @@ $metacourses_found = false;
 
 // Verificar si hay metacursos en la categoría específica
 foreach ($metacourses as $metacourse) {
-    if ($metacourse->category == 31) {
+    if ($metacourse->category == 29) {
         $metacourses_found = true;
         break;
     }
@@ -405,7 +415,7 @@ $metacourses_found = false;
 
 // Verificar si hay metacursos en la categoría específica
 foreach ($metacourses as $metacourse) {
-    if ($metacourse->category == 31) {
+    if ($metacourse->category == 29) {
         $metacourses_found = true;
         break;
     }
@@ -421,7 +431,7 @@ foreach ($metacourses as $metacourse) {
 
         <div class="cards-container justify-content-start row py-5">
             <?php foreach ($metacourses as $metacourse): ?>
-                <?php if ($metacourse->category == 31): ?>
+                <?php if ($metacourse->category == 29): ?>
                     <?php 
                         $modlink3 = new moodle_url('/course/view.php', array('id' => $metacourse->id));
                     ?>
@@ -454,7 +464,7 @@ $current_time = time(); // Obtener el tiempo actual
 
 // Filtrar cursos archivados válidos
 $filtered_archives = array_filter($archives, function($archived) use ($current_time) {
-    return $archived->enddate < $current_time && $archived->category != 31;
+    return $archived->enddate < $current_time && $archived->category != 29;
 });
 
 // Verificar si hay cursos archivados válidos
