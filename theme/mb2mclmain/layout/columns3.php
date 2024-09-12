@@ -404,7 +404,7 @@ $metacourses_found = false;
 
 // Verificar si hay metacursos en la categoría específica
 foreach ($metacourses as $metacourse) {
-    if ($metacourse->category == 29) {
+    if ($metacourse->category == 31) {
         $metacourses_found = true;
         break;
     }
