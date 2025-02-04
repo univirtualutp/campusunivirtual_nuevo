@@ -1,0 +1,57 @@
+# Ignorar archivos de configuración sensibles
+config.php
+config-dist.php
+config-private.php
+config-log.php
+
+# Ignorar datos de sesión y caché
+moodledata/
+cache/
+localcache/
+sessions/
+temp/
+trashdir/
+
+# Ignorar archivos de copias de seguridad de cursos
+**/backupdata/
+**/course/backupdata/
+**/moodledata/filedir/
+
+# Ignorar dependencias de Composer y Node.js
+vendor/
+node_modules/
+
+# Ignorar archivos de logs y depuración
+*.log
+*.sql
+*.sqlite
+*.sql.gz
+*.swp
+*.swo
+
+# Ignorar archivos de IDEs y editores
+.idea/
+.vscode/
+*.iml
+
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de instalación y actualizaciones temporales
+install.php
+maintenance.html
+
+# Ignorar archivos de pruebas y PHPUnit
+phpunit.xml
+tests/behat/
+results/
+
+# Ignorar archivos de personalización temporal
+userpix/
+repository/
+
+# Ignorar backups y datos de instalación
+backup/
+dump/
+database/
