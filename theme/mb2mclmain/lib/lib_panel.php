@@ -308,7 +308,7 @@ function theme_mb2mclmain_login_form ()
 
 		$output .= '<div class="form-field">';
 		$output .= '<label id="user"><i class="lni-user"></i></label>';
-		$output .= '<input id="login-username" type="text" name="username" placeholder="' . get_string('username') . '" />';
+		$output .= '<input id="login-username" type="text" name="username" placeholder="Número de Documento" />';
 		$output .= '</div>';
 		$output .= '<div class="form-field">';
 		$output .= '<label id="pass"><i class="lni-lock"></i></label>';
